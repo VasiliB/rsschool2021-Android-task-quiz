@@ -1,3 +1,46 @@
 <resources>
     <string name="app_name">Quiz</string>
+
+    <string name="question_1">"Answer to the Ultimate Question of Life, the Universe, and Everything"</string>
+    <string name="answer_1_1">"0"</string>
+    <string name="answer_1_2">1</string>
+    <string name="answer_1_3">2</string>
+    <string name="answer_1_4">42</string>
+    <string name="answer_1_5">69</string>
+
+    <string name="question_2">The number of Kurama tails</string>
+    <string name="answer_2_1">9</string>
+    <string name="answer_2_2">10</string>
+    <string name="answer_2_3">1</string>
+    <string name="answer_2_4">42</string>
+    <string name="answer_2_5">0</string>
+
+    <string name="question_3">What time is now?</string>
+    <string name="answer_3_1">2021</string>
+    <string name="answer_3_2">1937</string>
+    <string name="answer_3_3">1984</string>
+    <string name="answer_3_4">0</string>
+    <string name="answer_3_5">2007</string>
+
+    <string name="question_4">Year of birth of Jesus</string>
+    <string name="answer_4_1">33</string>
+    <string name="answer_4_2">2000</string>
+    <string name="answer_4_3">3</string>
+    <string name="answer_4_4">33</string>
+    <string name="answer_4_5">0</string>
+
+    <string name="question_5">What is this question in the account?</string>
+    <string name="answer_5_1">1</string>
+    <string name="answer_5_2">2</string>
+    <string name="answer_5_3">3</string>
+    <string name="answer_5_4">4</string>
+    <string name="answer_5_5">5</string>
+
+    <string name="result">Your result is:</string>
+
+    <string name="share">Share</string>
+    <string name="back">Back</string>
+    <string name="exit">Exit</string>
+
+
 </resources>

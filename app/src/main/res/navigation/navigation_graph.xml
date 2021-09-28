@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph.xml"
+    app:startDestination="@id/QuizFragment">
+
+    <fragment
+        android:id="@+id/QuizFragment"
+        android:name="com.rsschool.quiz.view.QuizFragment"
+        tools:layout="@layout/question_adapter">
+        <action
+            android:id="@+id/action_QuizFragment_to_ResultFragment"
+            app:destination="@id/ResultFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ResultFragment"
+        android:name="com.rsschool.quiz.view.ResultFragment"
+        android:label="item_detail_adapter"
+        tools:layout="@layout/fragment_result">
+        <argument
+            android:name="detailFragmentArgs"
+            app:argType="com.rsschool.quiz.model.QuestionData" />
+    </fragment>
+
+</navigation>
