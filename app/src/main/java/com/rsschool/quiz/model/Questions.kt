@@ -1,10 +1,12 @@
 package com.rsschool.quiz.model
 
 import android.content.Context
+import android.os.Parcelable
 import com.rsschool.quiz.R
+import kotlinx.android.parcel.Parcelize
 import java.io.Serializable
 
-
+@Parcelize
 data class Questions(
     val id: Int,
     val question: String,
@@ -14,7 +16,7 @@ data class Questions(
     val option_4: String,
     val option_5: String,
     val answer: Int
-) : Serializable {
+) : Parcelable {
 
     companion object {
 

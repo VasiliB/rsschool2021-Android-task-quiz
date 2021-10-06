@@ -9,8 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
-import com.developersbreach.recyclerviewtoviewpager.viewModel.QuizViewModel
-import com.developersbreach.recyclerviewtoviewpager.viewModel.QuizViewModelFactory
+import com.rsschool.quiz.viewModel.QuizViewModelFactory
+import com.rsschool.quiz.viewModel.QuizViewModel
 import com.rsschool.quiz.R
 import com.rsschool.quiz.model.Questions
 
@@ -20,14 +20,21 @@ import com.rsschool.quiz.model.Questions
 class QuizFragment : Fragment() {
 
     private lateinit var questionArgs: Questions
-    private lateinit var viewModel: QuizViewModel
     private lateinit var viewPager2: ViewPager2
+
+        private lateinit var viewModel: QuizViewModel
+//    private val viewModel: QuizViewModel by lazy {
+//        ViewModelProvider(this).get(QuizViewModel::class.java)
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         val args = requireArguments()
         val application: Application = requireActivity().application
-        questionArgs = DetailsFragmentArgs.fromBundle(args).quizFragmentArgs
+
+        questionArgs = QuizFragmentArgs.fromBundle(args).quizFragmentArgs
+
         val factory = QuizViewModelFactory(application, questionArgs)
         viewModel = ViewModelProvider(this, factory).get(QuizViewModel::class.java)
     }
@@ -45,12 +52,12 @@ class QuizFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel.sportList.observe(viewLifecycleOwner, Observer { sportsList ->
+        viewModel.questionList.observe(viewLifecycleOwner, Observer { questionsList ->
             val detailViewPagerAdapter = QuizViewPagerAdapter(viewPager2)
-            detailViewPagerAdapter.submitList(sportsList)
+            detailViewPagerAdapter.submitList(questionsList)
             viewPager2.adapter = detailViewPagerAdapter
-            viewModel.selectedSport.observe(viewLifecycleOwner, Observer { selectedSport ->
-                val resetPosition = selectedSport.id
+            viewModel.selectedQuestion.observe(viewLifecycleOwner, Observer { selectedQuestion ->
+                val resetPosition = selectedQuestion.id
                 viewPager2.setCurrentItem(resetPosition, false)
             })
         })

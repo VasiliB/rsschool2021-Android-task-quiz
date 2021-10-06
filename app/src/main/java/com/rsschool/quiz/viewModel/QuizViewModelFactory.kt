@@ -1,4 +1,4 @@
-package com.developersbreach.recyclerviewtoviewpager.viewModel
+package com.rsschool.quiz.viewModel
 
 import android.app.Application
 import androidx.lifecycle.ViewModel

@@ -28,97 +28,12 @@
         android:id="@+id/pager"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/previous_button"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/margin_start_guideline"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:orientation="vertical"
-                app:layout_constraintGuide_begin="16dp" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/margin_end_guideline"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:orientation="vertical"
-                app:layout_constraintGuide_end="16dp" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/margin_top_guideline"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_begin="16dp" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/margin_bottom_guideline"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_end="16dp" />
-
-
-            <TextView
-                android:id="@+id/question"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textSize="22sp"
-                app:layout_constraintEnd_toEndOf="@id/margin_end_guideline"
-                app:layout_constraintStart_toStartOf="@id/margin_start_guideline"
-                app:layout_constraintTop_toTopOf="@id/margin_top_guideline"
-                tools:text="@string/question_1" />
-
-            <RadioGroup
-                android:id="@+id/radio_group"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="@id/margin_end_guideline"
-                app:layout_constraintStart_toStartOf="@id/margin_start_guideline"
-                app:layout_constraintTop_toBottomOf="@id/question">
-
-                <RadioButton
-                    android:id="@+id/option_one"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="@string/answer_1_1" />
-
-                <RadioButton
-                    android:id="@+id/option_two"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="@string/answer_1_2" />
-
-                <RadioButton
-                    android:id="@+id/option_three"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="@string/answer_1_3" />
-
-                <RadioButton
-                    android:id="@+id/option_four"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:checked="true"
-                    tools:text="@string/answer_1_4" />
-
-                <RadioButton
-                    android:id="@+id/option_five"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="@string/answer_1_5" />
-
-            </RadioGroup>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.viewpager2.widget.ViewPager2>
+        app:layout_constraintTop_toBottomOf= "@id/appBarLayout"
+        />
 
     <Button
         android:id="@+id/previous_button"

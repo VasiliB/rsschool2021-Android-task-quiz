@@ -1,23 +1,52 @@
-package com.developersbreach.recyclerviewtoviewpager.viewModel
+package com.rsschool.quiz.viewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.rsschool.quiz.model.Questions
 
-class QuizViewModel(application: Application, sports: Questions): AndroidViewModel(application) {
+class QuizViewModel(application: Application, questions: Questions): AndroidViewModel(application) {
 
-    private val _questionsList: MutableLiveData<List<Questions>> = MutableLiveData()
-    val sportList: MutableLiveData<List<Questions>>
-        get() = _questionsList
+    private val _questions: MutableLiveData<List<Questions>> = MutableLiveData()
+    val questionList: MutableLiveData<List<Questions>>
+        get() = _questions
 
-    private val _selectedSport: MutableLiveData<Questions> = MutableLiveData()
-    val selectedSport: MutableLiveData<Questions>
-        get() = _selectedSport
+    private val _selectedQuestion: MutableLiveData<Questions> = MutableLiveData()
+    val selectedQuestion: MutableLiveData<Questions>
+        get() = _selectedQuestion
 
     init {
         val questionsList: List<Questions> = Questions.questionsList(application.applicationContext)
-        _questionsList.value = questionsList
-        _selectedSport.value = sports
+        _questions.value = questionsList
+        _selectedQuestion.value = questions
     }
 }
+
+//class QuizViewModel(application: Application): AndroidViewModel(application) {
+//
+//    private val _questions: MutableLiveData<List<Questions>> = MutableLiveData()
+//    val questionList: MutableLiveData<List<Questions>>
+//        get() = _questions
+//
+//    init {
+//        val questionsList: List<Questions> = Questions.questionsList(application.applicationContext)
+//        _questions.value = questionsList
+//    }
+//}
+
+//class QuizViewModel(application: Application): AndroidViewModel(application) {
+//
+//    private val _questions: MutableLiveData<List<Questions>> = MutableLiveData()
+//    val questionList: MutableLiveData<List<Questions>>
+//        get() = _questions
+//
+//    private val _selectedQuestion: MutableLiveData<Questions> = MutableLiveData()
+//    val selectedQuestion: MutableLiveData<Questions>
+//        get() = _selectedQuestion
+//
+//    init {
+//        val questionsList: List<Questions> = Questions.questionsList(application.applicationContext)
+//        _questions.value = questionsList
+//        _selectedQuestion.value = questions
+//    }
+//}
